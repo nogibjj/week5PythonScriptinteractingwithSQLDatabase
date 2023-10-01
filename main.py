@@ -27,6 +27,7 @@ def main():
     first_name = queryFirst_name(cursor)
     print(first_name)
 
+    # query3
     firstname = "ad"
     person = queryPerson(cursor, firstname)
     print(person)
