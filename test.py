@@ -1,6 +1,5 @@
-from mylib.crud import *
-from main import *
-import os
+from main import main
+
 
 def test_main():
     main()

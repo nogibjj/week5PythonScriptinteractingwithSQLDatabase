@@ -56,5 +56,6 @@ def deleteDB(cursor,id):
     cursor.execute('DELETE FROM people WHERE id = ?',(id,))
     
 def insertDB(cursor,id,first_name,last_name,age):
-     cursor.execute('''INSERT INTO people VALUES (?,?,?,?)''',(id,first_name,last_name,age))
+     cursor.execute('''INSERT INTO people VALUES (?,?,?,?)''',\
+     (id,first_name,last_name,age))
     

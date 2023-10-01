@@ -1,13 +1,15 @@
-from mylib.crud import *
+from mylib.crud import connectDB, createDB, readDB, queryAge
+from mylib.crud import queryFirst_name, queryPerson, updateDB, deleteDB, insertDB
 import os
+
 
 def main():
     if os.path.exists("mydb.db"):
         os.remove("mydb.db")
-    
+
     conn, cursor = connectDB("mydb.db")
 
-    #create
+    # create
     createDB(cursor)
     insertDB(cursor, 1, "jakhsd", "Michael", 19)
     insertDB(cursor, 2, "ad", "Michael", 23)
@@ -17,11 +19,11 @@ def main():
     info = readDB(cursor)
     print(info)
 
-    #query1
+    # query1
     age = queryAge(cursor)
     print(age)
 
-    #query2
+    # query2
     first_name = queryFirst_name(cursor)
     print(first_name)
 
@@ -29,7 +31,7 @@ def main():
     person = queryPerson(cursor, firstname)
     print(person)
 
-    #update
+    # update
     updateDB(cursor, 1, "Ethan", "Q", 33)
     info = readDB(cursor)
     print(info)
@@ -39,8 +41,8 @@ def main():
     info = readDB(cursor)
     print(info)
 
-
     conn.commit()
     conn.close()
+
 
 main()
